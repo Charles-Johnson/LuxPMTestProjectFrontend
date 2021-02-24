@@ -1,3 +1,3 @@
 export const Config = {
-    'api_url': 'http://localhost:8080'
+    'api_url': 'http://localhost:5000'
 }
