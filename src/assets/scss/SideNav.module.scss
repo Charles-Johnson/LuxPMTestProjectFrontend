@@ -1,0 +1,74 @@
+
+@media only screen and (min-width: 768px) {
+  // FOR DESKTOP AND TABLET
+
+$theme:#3f51b5;
+.sidenav {
+    
+    height: 100%;
+    width: 18% ;
+    position: fixed;
+    z-index: 1;
+    top: 4rem;
+    left: 0;
+    background-color:#fff;
+    overflow-x: hidden;
+    transition:  0.01s;
+box-shadow: #00000029 0.5px 0px 0px 0px;
+   z-index: 350;
+    transition: all 0.3s ease-in-out;
+  
+    & hr{
+      margin: 0 !important;
+    }
+    .logo{
+      width: 100%;
+  
+
+    }
+    .items{
+      text-align: initial;
+      color:#BCBCCB !important;
+      font-weight: 500;
+      border: none !important;
+
+      text-decoration: none !important;
+      .changeColor{
+        background-color: #b7bee565;
+        color: $theme;
+        text-align: center;
+        height: 3rem;
+        padding-top: 2rem !important;
+      }
+      .normal{
+        text-align: center;
+        height: 3rem;
+        padding-top: 2rem !important;
+
+      }
+    }
+    
+    
+  }
+
+  .overly{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0, 0, 0, 0.39);
+    transition: all 0.3s ease-in-out;
+
+}
+}
+
+@media only screen and (max-width: 767px) {
+  /* phones */
+   .sidenav {
+    display: none;
+  }
+
+  //   write css here
+}

@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.title{
+  margin-top:35px;
+  margin-bottom:35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.title-exercise{
+  margin-top:20px;
+  margin-bottom:15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.js .inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  max-width: 100%;
+  font-size: 12px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.no-js .inputfile + label {
+  display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label svg {
+  width: 1em;
+  height: 10px;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+
+  margin-right: 0.25em;
+  
+}
+
+#file-2{
+  display:none;
+}
+#thumbnail{
+  display: none;
+}
+
+
+.type{
+  display:flex;
+  flex-direction: row;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+.first label{
+  width:33%;
+}
+.common label{
+  width:25%;
+}
+.radio-toolbar label {
+
+  display: inline-block;
+  background-color: #ddd;
+  padding: 10px 20px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border-right:1px solid rgb(197, 195, 195);
+}
+.radio-toolbar input[type="radio"]:checked + label {
+  background-color:#2aa745;
+  color:white;
+
+}
+.radio-toolbar input[type="radio"]:focus + label {
+  border: 1px dashed #444;
+}
+.radio-toolbar label:hover {
+  background-color: #2aa745;
+  color:white;
+}
+input {
+  border-radius: 0px;
+}
+.top-button-left{
+  width:200px;
+  border-radius: 50%;
+}
+.top-button-right{
+  width:200px;
+}
+.nav-tabs{
+  border-bottom: none !important;
+}
+.nav-link.active{
+  border:1px solid gray !important;
+  color:white !important;
+  background: #444 !important;
+  border-radius: 0px !important;
+}
+.nav-link{
+  border:1px solid gray !important;
+  color:gray !important;
+}
+.table{
+  font-size:14px !important;
+}
+.thumbnail{
+  margin:-12px !important;
+  width:70px;
+  height: 70px;
+}
+.link-router{
+  color:black;
+}
+.link-router.hover{
+  color:white;
+}
+.link-router.active{
+  color:white !important;
+}
+
+
+.inputfile-4 + label {
+  color: #424141;
+}
+
+.inputfile-4:focus + label,
+.inputfile-4.has-focus + label,
+.inputfile-4 + label:hover {
+  color: #722040;
+}
+
+.inputfile-4 + label figure {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #313030;
+  display: block;
+  padding: 0px;
+  margin-top:10px;
+  margin-bottom: 0px;
+  
+}
+
+.inputfile-4:focus + label figure,
+.inputfile-4.has-focus + label figure,
+.inputfile-4 + label:hover figure {
+  background-color: #722040;
+}
+
+.inputfile-4 + label svg {
+  width: 70%;
+  height: 70%;
+  fill: #f1e5e6;
+  margin-top:10px;
+}
+
+
+/* style 5 */
+label{
+  margin-bottom: -2px !important;
+}
+
+
+
+
+.dropzone{
+  width: 70px;
+  height: 70px;
+  border:1px solid gray;
+  margin:-11px;
+}
+
+/* .filter-td{
+  display:flex !important;
+  flex-direction:"row" !important;
+  justify-content:space-between !important;
+} */

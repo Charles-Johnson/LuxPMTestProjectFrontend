@@ -1,0 +1,36 @@
+{
+    "translation": {
+        "pit": "Pilates Training",
+        "welcome_to_the_website": "Welcome to our website !",
+        "login_to_the_website": "Login now !",
+        "register_to_the_website": "Register now !",
+        "verify": "Verify",
+        "update": "Update",
+        "edit": "Edit",
+
+        "email_label": "Email Address",
+        "password_label": "Password",
+        "confirm_password_label": "Confirm Password",
+        "fullname_label": "Fullname",
+        "phone_number_label": "Phone Number",
+        "country_label": "Country",
+        "status_label": "Status",
+
+        "sign_in": "Sign In",
+        "sign_up": "Sign Up",
+        "logout": "Logout",
+        "dont_have_account": "You don't have an account ?",
+        "have_account": "Already have an account ?",
+        
+        "login_error": "Email and Password doesn't match.",
+        "invalid_email_error": "Email is invalid !!",
+        "invalid_password_error": "At least 8 characters including 1 capital letter,1 number and 1 special chracter",
+        "password_no_match_error": "Password is not match !",
+        "field_required_error": "This filed is required.",
+        "please_press_submit_error": "Please press submit button.",
+
+        "registration_successful": "You were registered successfully !!",
+
+        "last": "last"
+    }
+}

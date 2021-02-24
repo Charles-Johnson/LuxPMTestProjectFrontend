@@ -1,0 +1,29 @@
+@import "variables";
+@import "header";
+@import "shopBag";
+@import "reset";
+@import "general";
+
+.error-bar {
+  position: absolute;
+  right: $padding-lg;
+  top: 80px;
+  z-index: 99;
+}
+
+.item-cards {
+  margin-top: $padding-lg;
+}
+
+.orders {
+  margin-top: 64px;
+}
+
+.empty-title {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.bag-wrapper {
+  margin-top: $padding-lg;
+}

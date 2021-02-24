@@ -1,0 +1,96 @@
+.shop-bag__container {
+  transition: transform 0.2s ease-in-out;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  transform: translateX(100%);
+
+  &_opened {
+    transform: translateX(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .shop-bag {
+    padding: $padding-md;
+    transition: all 0.2s ease-in-out;
+    background-color: #fff;
+    box-shadow: inset 5px 1px 11px 2px rgba(0, 0, 0, 0.06);
+    max-height: 500px;
+    overflow-y: auto;
+
+    .shop-bag__pizzas {
+      position: relative;
+      display: flex;
+      padding: $padding-lg;
+      justify-content: space-between;
+      border-bottom: 1px solid #777777;
+
+      .shop-bag__description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: $padding-lg;
+        justify-content: space-between;
+        height: 160px;
+
+        .shop-bag__description_title {
+          font-size: 24px;
+          font-weight: 700;
+          color: #000015;
+        }
+
+        .shop-bag__description_text {
+          font-size: 12px;
+          color: #000010;
+          width: 160px;
+        }
+
+        .shop-bag__description_price {
+          color: darkblue;
+        }
+      }
+    }
+
+    .shop-bag__pizzas_un-line {
+      border: none;
+    }
+  }
+
+  .shop-bag__open-icon {
+    position: absolute;
+    cursor: pointer;
+    background-color: gray;
+    padding: 10px;
+    top: 0;
+    left: -88px;
+    transform: translateX(100%);
+  }
+
+  .order-button {
+    margin-top: $padding-md;
+  }
+
+  .bag-icon {
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+
+    svg {
+      fill: #fff;
+    }
+
+    transform: rotate(180deg);
+
+    &_opened {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.item__remove-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

@@ -1,0 +1,37 @@
+{
+    "translation": {
+        "pit": "Pilates Training",
+        "welcome_to_the_website": "Welcome to Pilates Training",
+        "login_to_the_website": "지금 시작하세요!",
+        "register_to_the_website": "지금 바로 Pilates Training 멤버가 되세요!",
+        "verify": "인증",
+        "update": "수정",
+        "edit": "편집",
+
+        "email_label": "이메일",
+        "password_label": "비밀번호",
+        "confirm_password_label": "비밀번호 확인",
+        "name_label": "이름",
+        "fullname_label": "성명",
+        "phone_number_label": "휴대폰 번호",
+        "country_label": "국가",
+        "status_label": "상태",
+
+        "sign_in": "로그인",
+        "sign_up": "가입하기",
+        "logout": "로그아웃",
+        "dont_have_account": "아직 Pilates Training 회원이 아니신가요?",
+        "have_account": "이미 계정이 있으신가요?",
+        
+        "login_error": "이메일 또는 비밀번호를 확인해주세요.",
+        "invalid_email_error": "이메일 형식이 아닙니다.",
+        "invalid_password_error": "대문자, 숫자, 특수문자를 각 1개씩 포함한 8글자 이상이어야 합니다.",
+        "password_no_match_error": "비밀번호가 일치하지 않습니다.",
+        "field_required_error": "필수항목입니다.",
+        "please_press_submit_error": "신청서를 먼저 작성해주세요.",
+
+        "registration_successful": "회원가입이 정상적으로 되었습니다.",
+
+        "last": "last"
+    }
+}
