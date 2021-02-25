@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
 import { FaHeart, FaBars } from 'react-icons/fa';
+import AddIcon from '@material-ui/icons/Add';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../common/layout'
 import { makeStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -38,12 +40,15 @@ const Home = ({
                     <FaBars />
                 </div>
                 <header>
-                    <p>Home</p>
+                    <p>Posts</p>
                 </header>
                 <Container>
                     <Grid container>
                     </Grid>
                 </Container>
+                <Fab color="primary" aria-label="add" onClick={() => history.push('/new_post')}>
+                    <AddIcon />
+                </Fab>
                 <footer>
                     <small>
                         © 2020 made with <FaHeart style={{ color: 'red' }} /> by -{' '}
