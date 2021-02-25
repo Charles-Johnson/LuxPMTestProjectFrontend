@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import axios from 'axios';
@@ -19,6 +19,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Backdrop, CircularProgress } from "@material-ui/core";
 import { Alert, AlertTitle } from "@material-ui/lab";
+import MuiPhoneNumber from "material-ui-phone-number";
 import { Config } from '../../config/config';
 axios.defaults.baseURL = Config.api_url;
 
@@ -102,7 +103,7 @@ const Register = ({
     useEffect(() => {
     }, []);
 
-    const { register, handleSubmit, errors, watch } = useForm({
+    const { register, handleSubmit, errors, watch, control } = useForm({
         resolver: yupResolver(schema)
     });
 
@@ -157,6 +158,28 @@ const Register = ({
                         error={errors.lastname}
                         helperText={errors.lastname?.message}
                         inputRef={register}
+                    />
+
+                    <Controller
+                        control={control}
+                        name={"MuiPhoneNumber"}
+                        render={({onChange}) => (
+                            <MuiPhoneNumber
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="phoneNumber"
+                                label="Phone Number"
+                                name="phoneNumber"
+                                autoComplete="tel"
+                                autoFocus
+                                error={errors.phoneNumber}
+                                helperText={errors.phoneNumber?.message}
+                                defaultCountry={'kr'}
+                                onChange={onChange}
+                            />
+                        )}
                     />
 
                     <TextField
