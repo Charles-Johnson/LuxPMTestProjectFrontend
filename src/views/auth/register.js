@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import { useForm, Controller } from "react-hook-form";
+import React, {useState} from 'react';
+import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import axios from 'axios';
@@ -85,8 +85,10 @@ const Register = ({
     const [error, setError] = React.useState('');
     const [success, setSuccess] = React.useState('');
 
+    let [phoneNumber, setPhoneNumber] = useState("");
+
     const signUp = (form) => {
-        axios.post(`/signup`, form)
+        axios.post(`/signup`, {...form, phoneNumber})
             .then(({ data }) => {
                 if (data.success) {
                     setSuccess('You were registered successfully !!')
@@ -100,10 +102,7 @@ const Register = ({
             });
     }
 
-    useEffect(() => {
-    }, []);
-
-    const { register, handleSubmit, errors, watch, control } = useForm({
+    const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(schema)
     });
 
@@ -160,26 +159,22 @@ const Register = ({
                         inputRef={register}
                     />
 
-                    <Controller
-                        control={control}
-                        name={"MuiPhoneNumber"}
-                        render={({onChange}) => (
-                            <MuiPhoneNumber
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
-                                id="phoneNumber"
-                                label="Phone Number"
-                                name="phoneNumber"
-                                autoComplete="tel"
-                                autoFocus
-                                error={errors.phoneNumber}
-                                helperText={errors.phoneNumber?.message}
-                                defaultCountry={'kr'}
-                                onChange={onChange}
-                            />
-                        )}
+                    <MuiPhoneNumber
+                        variant="outlined"
+                        margin="normal"
+                        required
+                        fullWidth
+                        id="phoneNumber"
+                        label="Phone Number"
+                        name="phoneNumber"
+                        autoComplete="tel"
+                        autoFocus
+                        error={errors.phoneNumber}
+                        helperText={errors.phoneNumber?.message}
+                        defaultCountry={'kr'}
+                        onChange={(value) => {
+                            setPhoneNumber(value);
+                        }}
                     />
 
                     <TextField
