@@ -67,6 +67,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const schema = yup.object().shape({
+    firstname: yup.string().required(),
+    lastname: yup.string().required(),
     email: yup.string().email().required(),
     password: yup.string().min(8).matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/).required(),
     confirmPassword: yup.string().oneOf([yup.ref('password')]).required()
@@ -126,6 +128,36 @@ const Register = ({
                     {
                         success ? <Alert >{success}</Alert> : <></>
                     }
+
+                    <TextField
+                        variant="outlined"
+                        margin="normal"
+                        required
+                        fullWidth
+                        id="firstname"
+                        label="Given Name"
+                        name="firstname"
+                        autoComplete="given-name"
+                        autoFocus
+                        error={errors.firstname}
+                        helperText={errors.firstname?.message}
+                        inputRef={register}
+                    />
+
+                    <TextField
+                        variant="outlined"
+                        margin="normal"
+                        required
+                        fullWidth
+                        id="lastname"
+                        label="Surname"
+                        name="lastname"
+                        autoComplete="family-name"
+                        autoFocus
+                        error={errors.lastname}
+                        helperText={errors.lastname?.message}
+                        inputRef={register}
+                    />
 
                     <TextField
                         variant="outlined"
