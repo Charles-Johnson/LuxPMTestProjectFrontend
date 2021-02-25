@@ -21,6 +21,8 @@ import { Backdrop, CircularProgress } from "@material-ui/core";
 import { Alert, AlertTitle } from "@material-ui/lab";
 import MuiPhoneNumber from "material-ui-phone-number";
 import { Config } from '../../config/config';
+import PhoneNumber from "awesome-phonenumber";
+
 axios.defaults.baseURL = Config.api_url;
 
 function Copyright() {
@@ -85,10 +87,11 @@ const Register = ({
     const [error, setError] = React.useState('');
     const [success, setSuccess] = React.useState('');
 
-    let [phoneNumber, setPhoneNumber] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState(new PhoneNumber(""));
+    const [phoneNumberError, setPhoneNumberError] = useState(null);
 
     const signUp = (form) => {
-        axios.post(`/signup`, {...form, phoneNumber})
+        phoneNumberError || axios.post(`/signup`, {...form, phoneNumber: phoneNumber.getNumber()})
             .then(({ data }) => {
                 if (data.success) {
                     setSuccess('You were registered successfully !!')
@@ -169,11 +172,26 @@ const Register = ({
                         name="phoneNumber"
                         autoComplete="tel"
                         autoFocus
-                        error={errors.phoneNumber}
-                        helperText={errors.phoneNumber?.message}
+                        error={phoneNumberError}
+                        helperText={phoneNumberError?.message}
                         defaultCountry={'kr'}
                         onChange={(value) => {
-                            setPhoneNumber(value);
+                            const pn = new PhoneNumber(value);
+                            setPhoneNumber(pn);
+                            setPhoneNumberError((() => {
+                                switch (pn.a.possibility) {
+                                    case 'is-possible':
+                                        return null;
+                                    case 'invalid-country-code':
+                                        return new Error("Enter a valid country code");
+                                    case 'too-long':
+                                        return new Error("The phone number is too long");
+                                    case 'too-short':
+                                        return new Error("The phone number is too short");
+                                    default:
+                                        return new Error("Invalid phone number");
+                                }
+                            })());
                         }}
                     />
 
